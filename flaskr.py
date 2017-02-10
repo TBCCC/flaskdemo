@@ -56,7 +56,7 @@ def login():
         if request.form['username']!=app.config['USERNAME']:
             error = 'Invalid username'
         elif request.form['password']!=app.config['PASSWORD']:
-            error = 'Invaild password'
+            error = 'Invalid password'
         else:
             session['logged_in']=True
             flash('You were logged in')
@@ -66,7 +66,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.pop('logged_in',None)
-    flash("you were logged out")
+    flash("You were logged out")
     return redirect(url_for('show_entries'))
 
 
